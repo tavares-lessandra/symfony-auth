@@ -3,13 +3,73 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register Form</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
+  
+        {# <button class="btn">Register</button>
+        <section >
         
+       
+        <!-- Action qui permet de diriger vers l autre page avec methode post  -->
+        {# <form action="" method="post"> #} 
+        
+        <h2>Nouveaux inscrits</h2>
+<div class="container" style="background-color: lightslategrey;">
+         {{ form_start(registrationForm) }}
+            <!-- NOM -->
+            <div class="form-group">
+                {# <label for="nom">Nom:</label>
+                <input type="text" class="form-control" id="nom" placeholder="Enter email" name="nom"> #}
+                {{ form_row(registrationForm.nom, {'label': 'nom', 'attr':{'class': 'form-control'}}) }}
+            </div>
 
-        <button class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            <!-- prenom -->
+            <div class="form-group">
+                {# <label for="Prenom">Prenom:</label>
+                <input type="text" class="form-control" id="Prenom" placeholder="Enter prenom" name="prenom"> #}
+                {{ form_row(registrationForm.prenom, {'label': 'prenom', 'attr':{'class': 'form-control'}}) }}
+            </div>
+            <!-- telephone -->
+            <div class="form-group">
+                {# <label for="tel">Tel:</label>
+                <input type="text" class="form-control" id="tel" placeholder="Enter tel" name="tel"> #}
+                {{ form_row(registrationForm.tel, {'label': 'tel', 'attr':{'class': 'form-control'}}) }}
+            </div>
+
+            <!-- adress -->
+            <div class="form-group">
+                {# <label for="adress">Adress:</label>
+                <input type="text" class="form-control" id="" placeholder="Enter adress" name="adress"> #}
+                {{ form_row(registrationForm.adress, {'label': 'adress', 'attr':{'class': 'form-control'}}) }}
+            </div>
+            <!-- PAYS -->
+             <div class="form-group">
+              {#  <label for="pays">Pays:</label>
+                <input type="text" class="form-control" id="" placeholder="Enter pays" name="pays"> #}
+                {{ form_row(registrationForm.pays, {'label': 'pays', 'attr':{'class': 'form-control'}}) }}
+            </div> 
+            <!-- email -->
+            <div class="form-group">
+                {# <label for="email">Email:</label> #}
+                {# <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"> #}
+                {{ form_row(registrationForm.email, {'label': 'email', 'attr':{'class': 'form-control'}}) }}
+                
+            </div>
+            <!-- mot de passe -->
+            <div class="form-group">
+                {# <label for="mdp">Password:</label>
+                <input type="password" class="form-control " id="mdp" placeholder="Enter password" name="mdp"> #}
+                {{ form_row(registrationForm.plainPassword, {'label': 'password','attr':{'class': 'form-control'}}) }}
+            </div>
+            
+             <div class="form-group">
+                <label for"mdp">Confirmer Password:</label>
+                <input type="password" class="form-control " id="mdp" placeholder="confirm password" name="mdp2"> 
+            </div>
+            <button class="btn btn-lg btn-primary" type="submit" style="line-height: 1">Envoie</button>
+        
+    
+           {{ form_end(registrationForm) }} 
+    </div>
+</section>
+<br />
+<br />
 {% endblock %}
